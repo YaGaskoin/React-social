@@ -1,0 +1,11 @@
+.nav{
+  grid-area: n;
+  background-color: cornflowerblue;
+}
+.nav_item{
+    display:block;
+    color: lawngreen;
+}
+.active{
+    color: pink;
+}

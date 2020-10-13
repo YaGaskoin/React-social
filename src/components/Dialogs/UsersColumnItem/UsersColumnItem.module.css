@@ -1,0 +1,7 @@
+.users_column__item  a{
+    text-decoration: none;
+     color: mediumspringgreen;
+}
+.active{
+    color:hotpink !important;
+}
