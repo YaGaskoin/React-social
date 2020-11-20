@@ -1,19 +1,19 @@
-import React from "react";
-import css from './Dialogs.module.css'
-import UsersColumnItem from "./UsersColumnItem/UsersColumnItem";
-import DialogItem from './DialogItem/DialogItem'
 import {
     addMessageActionCreator,
     changeMessageActionCreator
 } from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
-import StoreContext from "../../StoreContext";
-import connect from "react-redux/lib/connect/connect";
+import {connect} from "react-redux";
+import {Redirect} from "react-router-dom";
+import React from "react";
+import {withAuthRedirect} from "../../hoc/AuthRedirect";
+import {compose} from "redux";
 
 
 let mapStateToProps = (state) => {
     return {
-        messagesPage: state.messagesPage
+        messagesPage: state.messagesPage,
+        isAuth: state.auth.isAuth,
     }
 }
 
@@ -24,6 +24,7 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
-export default DialogsContainer;
+
+
+export default compose( connect(mapStateToProps, mapDispatchToProps), withAuthRedirect)(Dialogs);

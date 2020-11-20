@@ -2,6 +2,7 @@ import React from "react";
 import css from './Dialogs.module.css'
 import UsersColumnItem from "./UsersColumnItem/UsersColumnItem";
 import DialogItem from './DialogItem/DialogItem'
+import {Redirect} from "react-router-dom";
 
 
 const Dialogs = (props) => {
@@ -22,13 +23,13 @@ const Dialogs = (props) => {
 
     let usersComponents = props.messagesPage.usersData.map((user) => {
         return (
-            <UsersColumnItem name={user.name} id={user.id}/>
+            <UsersColumnItem key={user.id} name={user.name} id={user.id}/>
         )
     })
 
     let usersMessages = props.messagesPage.usersMessages.map((message) => {
         return(
-            <DialogItem text={message.text}/>
+            <DialogItem key={message.id} text={message.text}/>
         )
     })
     return (

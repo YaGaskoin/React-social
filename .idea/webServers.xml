@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="49e6d846-f39b-4b18-ac4f-2ad82895f2eb" name="drv6">
+        <fileTransfer accessType="SFTP" host="62.109.13.179" port="22" sshConfigId="7e283fca-da2f-4056-ba9d-a7685a3d3aa7" sshConfig="ps_chernetsov_d@62.109.13.179:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="f7517ad4-a64a-4ac2-932d-bc81e4e97aff" name="kolesoftp" url="http://178.170.220.42">
+        <fileTransfer host="178.170.220.42" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="9a6e7834-832a-4d28-9525-96d95b9ebc0d" name="origallcranes">
+        <fileTransfer accessType="SFTP" host="ssh.allcrane.nichost.ru" port="22" sshConfigId="037e3a34-5a23-4901-a866-7fcface4ed7a" sshConfig="allcrane@ssh.allcrane.nichost.ru:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

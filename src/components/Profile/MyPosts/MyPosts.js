@@ -15,7 +15,7 @@ const MyPosts = (props) => {
                 <div className={css.posts}>
                  <h3>My posts</h3>
                         {postsComponents}
-                <CommentForm newPost={props.newPost} updateNewPostText={props.updateNewPostText}
+                <CommentForm newPost={props.newPostText} updateNewPostText={props.updateNewPostText}
                              addPost={props.addPost}/>
                 </div>
         )
