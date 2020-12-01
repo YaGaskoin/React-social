@@ -1,0 +1,271 @@
+.CDEK-widget {
+  font: 16px/22px 'Noah', sans-serif;
+  color: #563494; }
+  .CDEK-widget__sidebar-burger hr {
+    display: none; }
+  .CDEK-widget__delivery-type {
+    top: calc(100% + 8px);
+    background-color: transparent;
+    overflow: hidden; }
+    .CDEK-widget__delivery-type__button {
+      width: 44px;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 auto;
+              flex: 0 0 auto;
+      background-color: #D118A3 !important; }
+      .CDEK-widget__delivery-type__button svg {
+        width: 24px;
+        stroke: #fff; }
+    .CDEK-widget__delivery-type__title {
+      padding: 19px 16px;
+      text-align: left;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 700;
+      color: #563494;
+      background-color: #fff;
+      border: 0;
+      border-radius: 10px; }
+    .CDEK-widget__delivery-type__item {
+      padding: 16px;
+      margin-top: 8px;
+      background-color: #fff;
+      border-radius: 10px; }
+      .CDEK-widget__delivery-type__item:last-of-type {
+        border-radius: 10px; }
+      .CDEK-widget__delivery-type__item:hover, .CDEK-widget__delivery-type__item.active {
+        -webkit-box-shadow: inset 0 0 49px 73px rgba(183, 169, 208, 0.15);
+                box-shadow: inset 0 0 49px 73px rgba(183, 169, 208, 0.15); }
+      .CDEK-widget__delivery-type__item-title {
+        margin-bottom: 10px; }
+        .CDEK-widget__delivery-type__item-title svg {
+          height: 20px;
+          margin-right: 10px;
+          stroke: #B7A9D0; }
+        .CDEK-widget__delivery-type__item-title > span {
+          color: #563494;
+          font-size: 16px;
+          line-height: 1;
+          font-weight: 700; }
+      .CDEK-widget__delivery-type__item-details {
+        padding-left: 34px; }
+        .CDEK-widget__delivery-type__item-details p {
+          margin: 10px 0 0;
+          font-size: 16px;
+          line-height: 1; }
+  .CDEK-widget__search {
+    width: 285px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background-color: transparent;
+    border-radius: 10px; }
+    .CDEK-widget__search-box {
+      height: 44px;
+      overflow: hidden;
+      border-radius: 10px; }
+      .CDEK-widget__search-box input {
+        padding: 12px 20px;
+        font: 18px/1 "Noah", sans-serif;
+        font-weight: 400;
+        color: #AD8BD7; }
+  .CDEK-widget__panel {
+    background-color: #F7F4FD; }
+    .CDEK-widget__panel-headline {
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: 20px 26px 12px;
+      text-align: left; }
+      .CDEK-widget__panel-headline span {
+        font-size: 24px;
+        line-height: 1;
+        font-weight: 700;
+        color: #563494; }
+    .CDEK-widget__panel-contacts .CDEK-widget__panel-content {
+      color: #563494; }
+      .CDEK-widget__panel-contacts .CDEK-widget__panel-content p a {
+        color: #563494; }
+        .CDEK-widget__panel-contacts .CDEK-widget__panel-content p a svg .path {
+          fill: #563494; }
+    .CDEK-widget__panel-list {
+      padding: 0 10px 0 0; }
+      .CDEK-widget__panel-list__item {
+        width: auto;
+        margin: 0 10px 10px;
+        color: #563494;
+        background-color: #fff;
+        border-radius: 10px; }
+        .CDEK-widget__panel-list__item svg .svg-line {
+          fill: #B7A9D0; }
+        .CDEK-widget__panel-list__item-name {
+          font-size: 16px;
+          line-height: 1;
+          font-weight: 700; }
+        .CDEK-widget__panel-list__item p {
+          margin: 0 0 14px 23px;
+          line-height: 1.37; }
+          .CDEK-widget__panel-list__item p:last-child {
+            margin-bottom: 0; }
+    .CDEK-widget__panel-details__back {
+      width: 30px; }
+      .CDEK-widget__panel-details__back svg {
+        width: 8px;
+        height: 15px; }
+        .CDEK-widget__panel-details__back svg .path {
+          fill: #563494; }
+      .CDEK-widget__panel-details__back:hover svg .path {
+        fill: #D118A3; }
+    .CDEK-widget__panel-details__block {
+      margin: 0 0 18px; }
+      .CDEK-widget__panel-details__block-head {
+        padding: 0 0 10px;
+        font-size: 18px;
+        line-height: 1;
+        color: #563494;
+        font-weight: 700; }
+      .CDEK-widget__panel-details__block-text {
+        color: #563494; }
+  .CDEK-widget__sidebar {
+    background-color: #F7F4FD; }
+    .CDEK-widget__sidebar-button svg {
+      fill: #D118A3; }
+    .CDEK-widget__sidebar-button.active {
+      background-color: #D118A3; }
+      .CDEK-widget__sidebar-button.active svg {
+        fill: #fff; }
+    .CDEK-widget__sidebar-button:not(.active):hover {
+      background-color: #fff; }
+    .CDEK-widget__sidebar-burger {
+      opacity: 1; }
+      .CDEK-widget__sidebar-burger span {
+        background-color: #D118A3; }
+      .CDEK-widget__sidebar-burger.active span {
+        background-color: #fff; }
+  .CDEK-widget__choose {
+    padding: 18px 20px;
+    font-family: "Noah", sans-serif;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 700;
+    background-color: #D118A3;
+    border: 0;
+    border-radius: 10px;
+    -webkit-transition: background-color .2s;
+    transition: background-color .2s; }
+    .CDEK-widget__choose:after {
+      display: none; }
+    .CDEK-widget__choose:hover {
+      background-color: #FF1AC6; }
+  .CDEK-widget .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    margin: 0 0 0 auto;
+    width: 4px;
+    background-color: #B7A9D0; }
+
+.cdek-map {
+  min-width: 100%;
+  height: 536px; }
+
+.cdek-info {
+  width: 100%;
+  margin: 18px 0 0; }
+  .cdek-info--hidden {
+    display: none; }
+  .cdek-info__table {
+    padding: 26px;
+    font-size: 24px;
+    color: #563494;
+    border: 1px solid #DFD1F3;
+    border-radius: 10px; }
+  .cdek-info__address-block {
+    max-width: 532px;
+    margin: 18px 0 0; }
+  .cdek-info__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-weight: 700; }
+  .cdek-info__name {
+    line-height: 1.25; }
+  .cdek-info__reset {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: .67em;
+    line-height: 1;
+    color: #B7A9D0;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    -webkit-transition: color .2s;
+    transition: color .2s; }
+    .cdek-info__reset svg {
+      width: 13px;
+      height: 13px;
+      margin: 0 9px 2px 0;
+      fill: #B7A9D0;
+      -webkit-transition: fill .2s;
+      transition: fill .2s; }
+    .cdek-info__reset:hover {
+      color: #563494; }
+      .cdek-info__reset:hover svg {
+        fill: #563494; }
+  .cdek-info__bottom {
+    max-width: 394px;
+    margin-top: 12px; }
+  .cdek-info__hours, .cdek-info__address {
+    font-size: .67em;
+    line-height: 1.37; }
+  .cdek-info__address {
+    margin: 0 0 12px; }
+  .cdek-info__hours {
+    max-width: 36%;
+    color: #B7A9D0; }
+
+@media (max-width: 767px) {
+  .cdek-map {
+    height: 500px;
+    width: calc(100% + 44px);
+    margin: 0 -22px; }
+  .cdek-info__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: normal;
+        -ms-flex-pack: normal;
+            justify-content: normal; }
+  .CDEK-widget__sidebar {
+    width: 45px; }
+    .CDEK-widget__sidebar-button {
+      height: 45px; }
+    .CDEK-widget__sidebar-burger {
+      padding: 13px 0 14px; }
+  .CDEK-widget__panel {
+    right: 45px;
+    max-width: calc(100% - 45px); }
+    .CDEK-widget__panel-headline {
+      padding: 15px 15px 10px; }
+      .CDEK-widget__panel-headline span {
+        font-size: 18px; }
+    .CDEK-widget__panel-list__item {
+      margin: 0 5px 5px;
+      padding: 12px 16px; }
+      .CDEK-widget__panel-list__item p {
+        margin: 0 0 10px 23px;
+        font-size: 14px;
+        line-height: 1.2; }
+  .CDEK-widget__search {
+    width: 235px;
+    top: 5px;
+    left: 5px; }
+    .CDEK-widget__search-box input {
+      padding: 12px; } }
+
+/*# sourceMappingURL=cdek.css.map */
