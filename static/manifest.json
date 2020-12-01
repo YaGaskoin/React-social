@@ -1,8 +1,0 @@
-{
-    "name": "shop",
-    "short_name": "shop",
-    "lang": "ru-RU",
-    "start_url": "/",
-    // "theme_color":"#fff",
-    "display": "standalone"
-}

@@ -1,1 +1,0 @@
-updateCatalog("",true)
