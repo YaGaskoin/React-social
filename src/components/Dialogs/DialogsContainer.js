@@ -4,7 +4,6 @@ import {
 } from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
-import {Redirect} from "react-router-dom";
 import React from "react";
 import {withAuthRedirect} from "../../hoc/AuthRedirect";
 import {compose} from "redux";
@@ -20,7 +19,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
     return {
         updateMessageBody: (body) => { dispatch(changeMessageActionCreator(body))},
-        addMessage: () => {dispatch(addMessageActionCreator())}
+        addMessage: (text) => {dispatch(addMessageActionCreator(text))}
     }
 }
 

@@ -1,19 +1,12 @@
 import React from 'react';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import store from './redux/redux-store'
 import ReactDOM from "react-dom";
-import {BrowserRouter} from "react-router-dom";
-import App from "./App";
-import {Provider} from "react-redux";
+import SamuraiJSApp from "./App";
 
-    ReactDOM.render(
+ReactDOM.render(
         <React.StrictMode>
-            <Provider store={store}>
-                <BrowserRouter>
-                    <App/>
-                </BrowserRouter>
-            </Provider>
+           <SamuraiJSApp/>
         </React.StrictMode>,
         document.getElementById('root')
     );

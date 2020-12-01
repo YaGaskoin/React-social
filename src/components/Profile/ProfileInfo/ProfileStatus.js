@@ -41,12 +41,11 @@ class ProfileStatus extends React.Component {
                 </div> : <div>
                     <span onDoubleClick={this.activateEditMode} > {this.props.status || '------'} </span>
                 </div>}
-
-                <div className={css.profile_info__text}>
+                {this.props.profile && this.props.profile.aboutMe ? <div className={css.profile_info__text}>
                     {this.props.profile.aboutMe}
-                </div>
+                </div> : <div>Описание</div>}
                 <div>
-                    {this.props.profile.lookingForAJob ? <div>В поиске работы:
+                    {this.props.profile && this.props.profile.lookingForAJob ? <div>В поиске работы:
                         Да<br/>Описание: {this.props.profile.lookingForAJobDescription}
                     </div> : <div>В поиске работы: Нет</div>}
                 </div>

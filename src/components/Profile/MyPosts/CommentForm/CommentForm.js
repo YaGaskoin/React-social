@@ -1,33 +1,39 @@
-import css from "./CommentForm.module.css";
 import React from "react";
+import {Field, reduxForm} from 'redux-form'
 import {
-    addPostActionCreator,
-    changePostActionCreator
-} from "../../../../redux/profile-reducer";
+    maxLength,
+    requiredField
+} from "../../../../utils/validators/validators";
+import {Textarea} from "../../../common/FormsControls/FormsControls";
 
-
+const maxLength100 = maxLength(100);
 const CommentForm = (props) => {
 
-    let newPostElement = React.createRef();
+    // let newPostElement = React.createRef();
+    //
+    // let onPostChange = (e) => {
+    //     e.preventDefault();
+    //     let text = newPostElement.current.value;
+    //     props.updateNewPostText(text);
+    // }
 
-    let onPostChange = (e) => {
-        e.preventDefault();
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
-    }
 
 
     return (
 
-                <form className={css.comment_form}>
+                <form onSubmit={props.handleSubmit}>
                     <div>
-                    <textarea ref={newPostElement} onChange={onPostChange}  value={props.newPost}/>
+                    <Field component={Textarea} name={'postText'} palaceholder={'Оставьте свое сообщение'} validate={[requiredField, maxLength100]}/>
                         </div>
                     <div>
-                    <button onClick={props.addPost}>Отправить </button>
+                    <button>Отправить </button>
                     </div>
                 </form>
     )
 }
 
-export default CommentForm
+const ReduxCommentForm = reduxForm({
+    form: 'comment'
+})(CommentForm)
+
+export default ReduxCommentForm

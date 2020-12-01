@@ -1,0 +1,18 @@
+.pageNumber{
+    padding:5px;
+    margin: 5px;
+    border: 1px solid darkorange;
+    cursor: pointer;
+}
+.currentPage{
+    padding:5px;
+    margin: 5px;
+    border: 1px solid darkorange;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    color:yellow;
+}
+.paginator{
+    padding: 15px 10px;
+}

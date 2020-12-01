@@ -4,11 +4,13 @@ import UsersApiComponent from "./UsersApiComponent";
 import {
     follow,
     getUsersThunkCreator,
-    setCurPage, setIsFetching, setIsFollowing,
+    setCurPage,
+    setIsFetching,
+    setIsFollowing,
     setTotalCount,
-    setUsersAc, unfollow,
+    setUsersAc,
+    unfollow,
 } from "../../redux/user-reducer";
-import {withAuthRedirect} from "../../hoc/AuthRedirect";
 import {compose} from "redux";
 
 
@@ -38,5 +40,4 @@ let mapDispatchToProps = {
 
 export default compose(
     connect(mapStateToProps, mapDispatchToProps),
-    withAuthRedirect
 )(UsersApiComponent)

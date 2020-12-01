@@ -2,22 +2,30 @@ import React from "react";
 import css from './Dialogs.module.css'
 import UsersColumnItem from "./UsersColumnItem/UsersColumnItem";
 import DialogItem from './DialogItem/DialogItem'
-import {Redirect} from "react-router-dom";
+import {Field, reduxForm} from "redux-form";
+import {Textarea} from "../common/FormsControls/FormsControls";
+import {maxLength, requiredField} from "../../utils/validators/validators";
 
+
+const maxLength50 = maxLength(50);
+
+const DialogForm = (props) => {
+    return(
+     <form onSubmit={props.handleSubmit}>
+         <Field component={Textarea} name={'messageText'} placeholder={'Введите сообщение'} validate={[requiredField, maxLength50]}/>
+                <button>Отправить</button>
+            </form>)
+}
+
+const ReduxDialogForm = reduxForm({
+    form: 'dialogMessage'
+})(DialogForm);
 
 const Dialogs = (props) => {
 
-    let messageText = React.createRef()
 
-    const addMessage = (e) => {
-        e.preventDefault();
-        props.addMessage();
-
-    }
-    const changeMessageText = (e) => {
-        e.preventDefault();
-        let text = messageText.current.value;
-        props.updateMessageBody(text);
+    const addMessage = (formData) => {
+        props.addMessage(formData.messageText);
 
     }
 
@@ -40,13 +48,7 @@ const Dialogs = (props) => {
             <div className={css.dialog_items}>
                 {usersMessages}
             </div>
-            <form>
-                <textarea ref={messageText} value={props.messagesPage.newMessage}
-                          onChange={changeMessageText}>
-
-                </textarea>
-                <button onClick={addMessage}>Отправить</button>
-            </form>
+            <ReduxDialogForm onSubmit={addMessage}/>
         </div>
     )
 }

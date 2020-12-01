@@ -7,7 +7,6 @@ import {connect} from 'react-redux'
 
 
 const mapSateToProps = (state) => {
-    console.log(state)
     return {
         posts: state.profilePage.posts,
         newPostText: state.profilePage.newPost
@@ -17,7 +16,7 @@ const mapSateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         updateNewPostText: (text) => {dispatch(changePostActionCreator(text))},
-        addPost: (e) => {e.preventDefault();dispatch(addPostActionCreator())},
+        addPost: (text) => {dispatch(addPostActionCreator(text))},
 
     }
 }

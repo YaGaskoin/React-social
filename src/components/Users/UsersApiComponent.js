@@ -11,6 +11,7 @@ class UsersApiComponent extends React.Component{
 
     changePage = (page) => {
        this.props.getUsersThunk(page, this.props.pageSize);
+       this.props.setCurPage(page);
     }
 
 

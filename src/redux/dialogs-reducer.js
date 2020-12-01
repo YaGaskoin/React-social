@@ -41,7 +41,7 @@ const dialogsReducer = (state=initialState, action) => {
          stateCopy.usersMessages.push({
             id: 7,
             date: '01.01.2013',
-            text: stateCopy.newMessage
+            text: action.text
             })
             stateCopy.newMessage = '';
             return stateCopy
@@ -57,9 +57,10 @@ const dialogsReducer = (state=initialState, action) => {
          text: text,
      }
     }
-    export let addMessageActionCreator = () => {
+    export let addMessageActionCreator = (text) => {
         return {
          type: SEND_MESSAGE,
+            text: text
      }
     }
 
