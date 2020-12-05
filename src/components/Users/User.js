@@ -2,13 +2,14 @@ import React from "react";
 import styles from "./users.module.css";
 import userPhoto from "../../assets/images/noimg.jpg";
 import {NavLink} from "react-router-dom";
+import css from "./users.module.css";
 
 
 let User = ({user, followingInProgress, follow, unfollow}) => {
     return (
 
 
-           <div key={user.id}>
+           <div className={css.user_item} key={user.id}>
                     <span>
                         <div>
                             <NavLink to={'/profile/' + user.id}>
@@ -29,7 +30,7 @@ let User = ({user, followingInProgress, follow, unfollow}) => {
                                     }}>follow</button>}
                         </div>
                     </span>
-                    <span>
+                    <span className={css.user_item_info} >
                         <span>
                             <div>
                                 {user.name}
@@ -40,10 +41,13 @@ let User = ({user, followingInProgress, follow, unfollow}) => {
                         </span>
                         <span>
                             <div>
-                                {'user.location.city'}
+                                {user.aboutMe}
                             </div>
                             <div>
-                                {'user.location.country'}
+                                {user.lookingForAJob}
+                            </div>
+                             <div>
+                                {user.lookingForAJobDescription}
                             </div>
                         </span>
                     </span>

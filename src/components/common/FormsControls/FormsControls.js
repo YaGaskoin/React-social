@@ -23,6 +23,13 @@ export const Textarea = FormControl('textarea');
 
 export const Input = FormControl('input');
 
-export const createField = (placeholder, name, validators, component, type='') =>
-    <Field component={component} validate={validators}
+export const createField = (placeholder, name, validators, component, type = '') => {
+    return <Field component={component} validate={validators}
            name={name} type={type} placeholder={placeholder}/>
+}
+
+export const createFieldAdvanced = ({name, value = null, component = Input, type = null, placeholder = null, validators = []}) =>{
+     return <Field component={component} validate={validators}
+           name={name} type={type} placeholder={placeholder} value={value}/>
+
+}

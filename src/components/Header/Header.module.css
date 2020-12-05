@@ -1,10 +1,15 @@
 .header{
   grid-area: h;
-  background-color: lightpink;
+  background-color: #7598DE;
 }
 .header img{
   width: 60px;
 }
 .loginBlock{
   float: right;
+}
+.header_logo{
+  margin: 10px;
+  background-color:palevioletred;
+  border-radius: 2px;
 }

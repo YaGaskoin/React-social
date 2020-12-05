@@ -6,3 +6,13 @@
 .selectedPage{
     font-weight: bold;
 }
+.users_block{
+    margin: 15px;
+}
+.user_item{
+    margin-bottom: 20px;
+}
+.user_item_info{
+    margin-top: 10px;
+    display: block;
+}

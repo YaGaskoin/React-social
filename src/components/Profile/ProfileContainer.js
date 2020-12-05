@@ -3,20 +3,20 @@ import Profile from "./Profile";
 import {connect} from "react-redux";
 import {
     addPostActionCreator,
-    changePostActionCreator,
+    changePostActionCreator, editUserInfo,
     getProfile,
     getStatus,
+    savePhoto, setEditModeAc,
     setUserProfile,
     updateStatus
 } from "../../redux/profile-reducer";
 import {Redirect, withRouter} from "react-router-dom";
 import {compose} from "redux";
-import {withAuthRedirect} from "../../hoc/AuthRedirect";
 
 
 class ProfileContainer extends React.Component {
 
-    componentDidMount() {
+    getUser() {
         let userId = this.props.match.params.userId
         if (!userId) {
             if(this.props.curLoginedId){
@@ -26,14 +26,28 @@ class ProfileContainer extends React.Component {
         }
         this.props.getProfile(userId);
         this.props.getStatus(userId);
+    }
 
+
+    componentDidMount() {
+       this.getUser();
+    }
+
+    componentWillUnmount() {
+        this.props.setEditMode(false);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.match.params.userId !== prevProps.match.params.userId){
+            this.getUser();
+        }
 
     }
 
     render() {
         if(!this.props.isAuth && !this.props.match.params.userId) return <Redirect to={'/login'}/>
         return <div>
-            <Profile {...this.props}/>
+            <Profile {...this.props} isOwner={!this.props.match.params.userId}/>
         </div>
     }
 }
@@ -46,7 +60,8 @@ let mapStateToProps = (state) => {
         profile: state.profilePage.profile,
         isAuth: state.auth.isAuth,
         status: state.profilePage.status,
-        curLoginedId: state.auth.userId
+        curLoginedId: state.auth.userId,
+        editMode: state.profilePage.editMode,
     }
 }
 
@@ -57,7 +72,10 @@ let mapDispatchToProps = {
     changePost: changePostActionCreator,
     getProfile: getProfile,
     getStatus: getStatus,
-    updateStatus: updateStatus
+    updateStatus: updateStatus,
+    savePhoto: savePhoto,
+    updateUserInfo: editUserInfo,
+    setEditMode: setEditModeAc,
 }
 
 

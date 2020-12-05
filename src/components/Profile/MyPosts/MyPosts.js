@@ -16,7 +16,7 @@ const MyPosts = React.memo((props) => {
 
         return (
                 <div className={css.posts}>
-                 <h3>My posts</h3>
+                 <h3>Записи</h3>
                         {postsComponents}
                 <CommentForm onSubmit={postSubmit}/>
                 </div>

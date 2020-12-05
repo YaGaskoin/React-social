@@ -9,3 +9,10 @@ export const maxLength = (length) => {
         return undefined;
     }
 }
+
+export const isUrl = (value) => {
+    if(value && !(value.includes('http://') || value.includes('https://'))){
+        return 'Value must contains http:// or https://'
+    }
+    return undefined;
+}

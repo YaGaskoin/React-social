@@ -5,6 +5,7 @@
       <sshConfig authType="PASSWORD" host="188.120.226.57" id="107b52f0-a946-454e-8518-d4d105c54424" port="22" nameFormat="DESCRIPTIVE" username="root" />
       <sshConfig authType="PASSWORD" host="ftp.allcrane.nichost.ru" id="35301e7d-3219-4dc4-a891-5f22738dde15" port="21" nameFormat="DESCRIPTIVE" username="allcrane_ps" />
       <sshConfig authType="PASSWORD" host="ssh.allcrane.nichost.ru" id="037e3a34-5a23-4901-a866-7fcface4ed7a" port="22" nameFormat="DESCRIPTIVE" username="allcrane" />
+      <sshConfig authType="PASSWORD" host="62.109.6.96" id="db09067b-3126-4369-adbc-46b20851becc" port="22" nameFormat="DESCRIPTIVE" username="ps_chernetsov_d" />
     </configs>
   </component>
 </project>

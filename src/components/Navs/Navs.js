@@ -10,15 +10,15 @@ const Navs =() => {
             <NavLink to="/dialogs" activeClassName={css.active} className={css.nav_item}>
                 Dialogs
             </NavLink >
-            <NavLink to="/news" activeClassName={css.active} className={css.nav_item}>
-                News
-            </NavLink>
-            <NavLink to="/music" activeClassName={css.active} className={css.nav_item}>
-                Music
-            </NavLink>
-        <NavLink to="/settings" activeClassName={css.active} className={css.nav_item}>
-                Settings
-            </NavLink>
+        {/*    <NavLink to="/news" activeClassName={css.active} className={css.nav_item}>*/}
+        {/*        News*/}
+        {/*    </NavLink>*/}
+        {/*    <NavLink to="/music" activeClassName={css.active} className={css.nav_item}>*/}
+        {/*        Music*/}
+        {/*    </NavLink>*/}
+        {/*<NavLink to="/settings" activeClassName={css.active} className={css.nav_item}>*/}
+        {/*        Settings*/}
+        {/*    </NavLink>*/}
          <NavLink to="/users" activeClassName={css.active} className={css.nav_item}>
                 Users
             </NavLink>

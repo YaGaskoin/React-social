@@ -1,7 +1,10 @@
 .users_column__item  a{
     text-decoration: none;
-     color: mediumspringgreen;
+    color:black;
+}
+.users_column__item  a:hover{
+     color:red;
 }
 .active{
-    color:hotpink !important;
+    color:red !important;
 }

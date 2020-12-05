@@ -4,7 +4,7 @@ import Navs from './components/Navs/Navs';
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {HashRouter, Route, withRouter} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from "./components/Login/Login";
@@ -20,20 +20,29 @@ const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileCo
 
 class App extends React.Component {
 
+    catchAllUnhandledErrors = (promiseRejectionEvent) => {
+        alert('error Occured')
+    }
+
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors)
+    }
+    componentWillUnmount() {
+        window.removeEventListener('unhandledrejection', this.catchAllUnhandledErrors)
     }
 
     render() {
 
         if (!this.props.initialized) {
-            return <Preloader/>
+            return <div className={css.app_content_wrapper}><Preloader/></div>
         }
         return (
             <div className={css.app_wrapper}>
                 <HeaderContainer/>
                 <Navs/>
                 <div className={css.app_content_wrapper}>
+                    <Route path={'/'} exact={true} render={withSuspense(ProfileContainer)}/>
                     <Route path='/dialogs' render={withSuspense(DialogsContainer)
                     }/>
                     <Route path='/profile/:userId?'
@@ -61,11 +70,11 @@ let AppContainer = compose(
 )(App)
 
 let SamuraiJSApp = props => {
-    return <BrowserRouter>
+    return <HashRouter basename={process.env.PUBLIC_URL}>
         <Provider store={store}>
             <AppContainer/>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 
 export default SamuraiJSApp

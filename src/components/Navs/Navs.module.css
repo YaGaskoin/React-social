@@ -1,11 +1,16 @@
 .nav{
+    padding-top: 10px;
   grid-area: n;
-  background-color: cornflowerblue;
+  background-color: #D6CEF7;
 }
 .nav_item{
     display:block;
-    color: lawngreen;
+    color: black;
+    padding: 10px;
+}
+.nav_item:hover{
+    background-color:#A593E8;
 }
 .active{
-    color: pink;
+    background-color:#A593E8;
 }

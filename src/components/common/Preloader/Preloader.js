@@ -1,9 +1,9 @@
- import loader from "../../../assets/images/Dual Ring-1s-200px.svg"
- import Users from "../../Users/Users";
+ import loader from "../../../assets/images/45.gif"
+ import css from './Preloader.module.css'
  import React from "react";
 
  let Preloader = (props) => {
-     return <img src={loader}/>
+     return <div className={css.preloader}><img className={css.preloader_img} src={loader}/></div>
 
  }
  export default Preloader

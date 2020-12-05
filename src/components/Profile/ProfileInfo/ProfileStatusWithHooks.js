@@ -27,22 +27,13 @@ const ProfileStatusWithHooks = (props) => {
 
             {
                 editMode ? <div>
-                        <input autoFocus={true} onChange={onStatusChange}
+                       — <textarea autoFocus={true} onChange={onStatusChange}
                                onBlur={deactivateEditMode} value={status}/>
                     </div> :
                     <div>
                         <span
-                            onDoubleClick={activateEditMode}>  {status || '------'} </span>
+                            onDoubleClick={activateEditMode}>  {'— ' +(status || '------')} </span>
                     </div>}
-
-            <div className={css.profile_info__text}>
-                {props.profile.aboutMe}
-            </div>
-            <div>
-                {props.profile.lookingForAJob ? <div>В поиске работы:
-                    Да<br/>Описание: {props.profile.lookingForAJobDescription}
-                </div> : <div>В поиске работы: Нет</div>}
-            </div>
         </div>
     )
 

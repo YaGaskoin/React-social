@@ -1,3 +1,66 @@
 .profile_info{
     margin: 10px;
 }
+.contact{
+    padding-left: 20px;
+    padding-bottom: 5px;
+    display: block;
+    color: black;
+    height: 37px;
+}
+.contact:hover{
+   color: red;
+}
+
+.contact_title{
+    position:relative;
+    top:-10px;
+    padding-left: 3px;
+    height: 24px;
+    display: inline-block;
+}
+
+.contact__units{
+    margin-top: 20px;
+}
+
+.profile_block{
+      border-top: 1px solid steelblue;
+    margin-top:15px;
+    padding-top: 10px;
+}
+.image_field{
+    display: block;
+    margin-bottom: 20px;
+}
+.lookjob__field{
+    display:block;
+    margin-bottom: 5px;
+}
+.contact_logo{
+    width: 32px;
+    height: 32px;
+}
+.about_me{
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+.lookjob_container{
+    padding-top: 10px;
+}
+.title{
+    margin-bottom: 10px;
+    display: block;
+}
+.profile_info_container{
+    padding-top: 20px;
+    border-top: 2px solid steelblue;
+}
+.profile_photo{
+    margin-bottom: 5px;
+}
+.summary_error{
+    padding: 5px;
+    border: 1px solid red;
+    margin-top: 5px;
+}

@@ -8,15 +8,15 @@ class ProfileStatus extends React.Component {
         status: this.props.status
     }
     activateEditMode = () => {
-       this.setState({
-           editMode: true
-       })
+        this.setState({
+            editMode: true
+        })
     }
 
     deactivateEditMode = () => {
-       this.setState({
-           editMode: false
-       })
+        this.setState({
+            editMode: false
+        })
         this.props.updateStatus(this.state.status)
     }
 
@@ -37,21 +37,17 @@ class ProfileStatus extends React.Component {
             <div>
 
                 {this.state.editMode ? <div>
-                    <input autoFocus={true} onChange={this.onStatusChange} onBlur={this.deactivateEditMode} value={this.state.status}/>
+                    <input autoFocus={true} onChange={this.onStatusChange}
+                           onBlur={this.deactivateEditMode}
+                           value={this.state.status}/>
                 </div> : <div>
-                    <span onDoubleClick={this.activateEditMode} > {this.props.status || '------'} </span>
+                    <span
+                        onDoubleClick={this.activateEditMode}> {('- ' + this.props.status) || '------'} </span>
                 </div>}
-                {this.props.profile && this.props.profile.aboutMe ? <div className={css.profile_info__text}>
-                    {this.props.profile.aboutMe}
-                </div> : <div>Описание</div>}
-                <div>
-                    {this.props.profile && this.props.profile.lookingForAJob ? <div>В поиске работы:
-                        Да<br/>Описание: {this.props.profile.lookingForAJobDescription}
-                    </div> : <div>В поиске работы: Нет</div>}
-                </div>
             </div>
         )
     }
+
 }
 
 export default ProfileStatus

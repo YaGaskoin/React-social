@@ -39,17 +39,33 @@ export const profileApi = {
          return instance.put('/profile/status/', {
              status: status
          })
+    },
+    savePhoto(file) {
+         let formData = new FormData();
+         formData.append('image', file)
+         return instance.put('/profile/photo', formData, {
+             'Content-Type': 'multipart/form-data'
+         })
+    },
+    editProfile(infoObj) {
+         return instance.put('/profile/', infoObj)
     }
 }
 export const authApi = {
     me(){
         return instance.get('auth/me')
     },
-    login(email, password, rememberMe = false) {
-        return instance.post('/auth/login', {email, password, rememberMe})
+    login(email, password, rememberMe = false, captcha=null) {
+        return instance.post('/auth/login', {email, password, rememberMe, captcha})
     },
     logout() {
         return instance.delete('/auth/login')
+    }
+}
+
+export const securityApi = {
+    getCaptchaUrl() {
+        return instance.get('/security/get-captcha-url')
     }
 }
 

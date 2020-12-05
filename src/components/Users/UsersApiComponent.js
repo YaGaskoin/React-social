@@ -17,17 +17,7 @@ class UsersApiComponent extends React.Component{
 
     render() {
        return <>
-           {this.props.isFetching ? <Preloader /> : null}<Users
-           totalUsersCount={this.props.totalUsersCount}
-           pageSize={this.props.pageSize}
-           currentPage={this.props.currentPage}
-           unfollow={this.props.unfollow}
-           follow={this.props.follow}
-           changePage={this.changePage}
-           setIsFollowing={this.props.setIsFollowing}
-           users={this.props.users}
-           followingInProgress={this.props.followingInProgress}
-       />
+           {this.props.isFetching ? <Preloader /> : null}<Users {...this.props} changePage={this.changePage}/>
        </>
     }
 }

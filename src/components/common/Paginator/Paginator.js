@@ -4,7 +4,7 @@ import css from './Paginator.module.css';
 let Paginator = ({totalItemsCount, pageSize, currentPage, perPortion=10, onPageChanged}) => {
     let pagesCount = Math.ceil(totalItemsCount / pageSize);
     let pages = []
-    console.log(currentPage)
+    console.log(onPageChanged)
     for (let i = 1; i <= Math.ceil(pagesCount); i++) {
         pages.push(i);
     }

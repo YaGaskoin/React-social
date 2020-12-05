@@ -1,9 +1,13 @@
 import {profileApi, usersAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const ADD_POST = 'add_post';
 const CHANGE_NEW_POST_TEXT = 'change_new_post_text';
 const SET_USER_PROFILE = 'set_user_profile';
-const SET_STATUS = 'SET_STATUS'
+const SET_STATUS = 'SET_STATUS';
+const PHOTO_SUCCESS = 'photo_success';
+const EDIT_USER_INFO = 'edit_user_info';
+const SET_EDIT_MODE = 'set_edit_mode';
 
 let initalState = {
     posts: [
@@ -13,6 +17,7 @@ let initalState = {
     newPost: '',
     profile: null,
     status: "",
+    editMode: false,
 }
 
 const profileReducer = (state = initalState, action) => {
@@ -38,6 +43,19 @@ const profileReducer = (state = initalState, action) => {
             }
             return stateCopy;
         }
+        case PHOTO_SUCCESS: {
+            return {
+                ...state, profile: {...state.profile, photos: action.photos}
+            }
+        }
+        case SET_EDIT_MODE:{
+            return {...state, editMode: action.editMode}
+        }
+        case EDIT_USER_INFO: {
+            return {
+                ...state, profile:{...state.profile, ...action.obj}
+            }
+        }
         case SET_USER_PROFILE: {
             return {...state, profile: action.profile}
         }
@@ -56,6 +74,14 @@ export let addPostActionCreator = (text) => {
         text: text
     }
 }
+
+export const setEditModeAc = (editMode) => {
+    return {
+        type: SET_EDIT_MODE,
+        editMode: editMode,
+    }
+}
+
 export let changePostActionCreator = (text) => {
     return {
         type: CHANGE_NEW_POST_TEXT,
@@ -80,6 +106,32 @@ export let deletePost = (postId) => {
         postId: postId
     }
 }
+export const savePhotoSuccess = (photos) => {
+    return {
+        type: PHOTO_SUCCESS,
+        photos: photos
+    }
+}
+export const editUserInfoAc = (infoObj) => {
+    return {
+        type: EDIT_USER_INFO,
+        obj: infoObj
+    }
+}
+
+export const editUserInfo = (infoObj) => {
+    return async (dispatch) => {
+        let response = await profileApi.editProfile(infoObj)
+        if (response.data.resultCode === 0) {
+            dispatch(editUserInfoAc(infoObj))
+            dispatch(setEditModeAc(true));
+        }else{
+            dispatch(stopSubmit('editProfile', {_error: response.data.messages[0]}))
+        }
+    }
+}
+
+
 export const getStatus = (userId) => {
     return async (dispatch) => {
         let response = await profileApi.getStatus(userId)
@@ -99,6 +151,14 @@ export const getProfile = (userId) => {
     return async (dispatch) => {
         let response = await profileApi.getProfile(userId)
         dispatch(setUserProfile(response.data));
+
+    }
+}
+
+export const savePhoto = (file) => {
+    return async (dispatch) => {
+        let response = await profileApi.savePhoto(file)
+        dispatch(savePhotoSuccess(response.data.data.photos));
 
     }
 }
